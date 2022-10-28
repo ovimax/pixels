@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'Pixel';
+	src: url('../fonts/PressStart2P-Regular.ttf');
+}
+.pixel
+{
+	width: 150px;
+	height: 150px;
+	border: 5px solid;
+	border-radius: 25%;
+	margin:  0 auto;
+}
+.canvas 
+{
+	width: 300px;
+	height: 300px;
+	outline: 2px solid;
+	margin: 0 auto;
+}
+.btn-png, .btn-png:hover
+{
+	background-color: cyan !important;
+}
+.btn-svg, .btn-svg:hover
+{
+	background-color: pink !important;
+}
+.color
+{
+	width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+.pixel>img
+{
+	width: 100%;
+	height: auto;
+	border-radius: 25%;
+}
+.canvas-tittle
+{
+	font-family: Pixel, sans-serif;
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+.canvas-info
+{
+	height: 100%;
+	position: relative;
+}
+.modal-body
+{
+	padding: 50px;
+}
+.canvas-actions
+{
+	position: absolute;
+	bottom: 0;
+}
+.canvas-actions>button
+{
+	font-size: 30px;
+	border: 2px solid;
+}
+svg
+{
+	display: none;
+}
+#pixelList label 
+{
+	font-size: 24px;
+    font-family: Pixel;
+}
