@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pixels</title>
+	<style type="text/css">
+		.canvas
+		{
+			width: 300px;
+			height: 300px;
+			border: 1px solid;
+		}
+		.row{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+	<div id="canvas" class="canvas"></div>
+</body>
+
+<script>
+	var canvas = document.getElementById('canvas');
+	canvas.style.width = "300px";
+	fetch("canvas/tree.json")
+		.then(response => response.json())
+  		.then(json => craftCanvas(json));
+
+  	function craftCanvas(json) {
+  		json.forEach((element)=>{
+  			var num = element.length;
+  			var wh = 300/num;
+  			var pixels="";
+  			element.forEach((pixel)=>{
+  				pixels += `<div class="pixel" style="background-color:${pixel};width:${wh}px;height:${wh}px"></div>`;
+  			})
+  			canvas.innerHTML += `<div class="row">${pixels}</div>`;
+  		})
+  	}
+
+  	var c = document.getElementById('canvas');
+	//var t = c.getContext('2d');
+
+	console.log(c.toDataURL());
+</script>
+</html>

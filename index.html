@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pixels Maniac</title>
+
+	<link rel=stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+	<style type="text/css">
+		@font-face {
+			font-family: 'Pixel';
+			src: url('assets/fonts/PressStart2P-Regular.ttf');
+		}
+		.pixel
+		{
+			width: 150px;
+			height: 150px;
+			border: 15px solid;
+			border-radius: 25%;
+			margin:  0 auto;
+		}
+		.canvas 
+		{
+			height: auto;
+			border: 2px solid;
+			margin: 0 auto;
+		}
+		.btn-png
+		{
+			background-color: cyan;
+		}
+		.btn-svg
+		{
+			background-color: pink;
+		}
+		.color
+		{
+			width: 60px;
+			height: 60px;
+			border: 1px solid;
+		}
+		.pixel>img
+		{
+			width: 100%;
+			height: auto;
+			border-radius: 25%;
+		}
+		.canvas-tittle
+		{
+			font-family: Pixel, sans-serif;
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		.canvas-info
+		{
+			height: 100%;
+			position: relative;
+		}
+		.modal-body
+		{
+			padding: 50px;
+		}
+		.canvas-actions
+		{
+			position: absolute;
+			bottom: 0;
+		}
+		.canvas-actions>button
+		{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="header text-center mt-5">
+			<img src="assets/img/pixel.png" alt="Pixel Gallery" width="50%">
+		</div>
+		<div class="pixels-list" style="margin-top: -50px;">
+			<div class="row" id="pixelList">
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal" tabindex="-1" id="pixel-modal">
+		<div class="modal-dialog modal-dialog-centered modal-xl">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-5 ">
+								<div class="canvas" id="canvas"></div>
+							</div>
+							<div class="col-7">
+								<div class="canvas-info">
+									<div class="canvas-tittle" id="canvas-tittle">PIXEL PICTURE (10x10)</div>
+									<div class="d-flex justify-content-between" id="canvas-colors">
+										<div class="color" style="background-color: #24955f;"></div>
+										<div class="color" style="background-color: #7e4735;"></div>
+										<div class="color" style="background-color: #aeb244;"></div>
+									</div>
+									<div class="canvas-actions" id="canvas-actions">
+										<button class="btn btn-png"><i class="bi bi-download"></i> PNG</button>
+										<button class="btn btn-svg"><i class="bi bi-download"></i> SVG</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+<script type="module" src="main.js"></script>
+</html>
