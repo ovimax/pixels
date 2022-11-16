@@ -31,6 +31,7 @@ const drawSVG = (color,dim,x,y) => {
 }
 
 
+// Display the thumbnail list
 for(const picture of canvasData)
 {
 	const pixelBox = `<div class="col-4 align-self-center mt-5 text-center">
@@ -42,6 +43,7 @@ for(const picture of canvasData)
 	pixelList.innerHTML+=pixelBox;
 }
 
+// Display the picture information in the pop up view, also creates a SVG hidden imagen
 $(document).on('click','div.pixel',function(){
 	var tag = $(this).data('tag');
 	picture = canvasData.filter((element)=>element.tag == tag)[0];
@@ -78,6 +80,7 @@ $(document).on('click','div.pixel',function(){
 
 
 //--- MODAL ACTION BUTTONS ---
+// PNG download
 $(".btn-png").click(function() {
 	var div = document.getElementById('canvas');
 	html2canvas(document.querySelector("#canvas")).then(canvas => {
@@ -87,12 +90,13 @@ $(".btn-png").click(function() {
 	});
 });
 
-
+// SVG download
 $(".btn-svg").click(function() {
 	downloadToFile(svgBox.innerHTML, `${picture.getName()}.svg`, 'image/svg+xml');
 });
 //--- MODAL ACTION BUTTONS ---
 
+// Clear the svg image when pop up view is closed
 const myModalEl = document.getElementById('pixel-modal')
 myModalEl.addEventListener('hidden.bs.modal', event => {
 	svg.innerHTML="";
