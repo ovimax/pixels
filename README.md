@@ -40,7 +40,6 @@ var pixelSize = canvasSize/picture.dimension;
 
 picture = canvasData.filter((element)=>element.tag == tag)[0]; //tag, is defined as data-tag in the thumbnail
 
-var pixelSize = canvasSize/picture.dimension;
 picture.matrix.forEach((row,xindex)=>{
     var pixelPicture = "";
     row.forEach((colorTag,yindex)=>{
